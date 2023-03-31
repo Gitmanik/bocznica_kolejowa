@@ -1,3 +1,7 @@
+/*
+Seria wagonów generowana w osobnym wątku (std::thread i std::ref)
+*/
+
 #include <iostream>
 #include <stdlib.h>
 
