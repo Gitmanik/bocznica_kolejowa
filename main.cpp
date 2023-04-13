@@ -1,39 +1,45 @@
 /*
-Seria wagonÃ³w generowana w osobnym wÄ…tku (std::thread i std::ref)
+Seria wagonów generowana w osobnym w¹tku (std::thread i std::ref)
 */
 
 #include <iostream>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <cctype>
+#include <conio.h>
 
 #include "siding.hpp"
 #include "track.hpp"
 
+void draw_screen(Siding* siding)
+{
+	system("cls");
+	std::cout << "Bocznica kolejowa - Techniki Programowania - Pawel Reich, Mateusz Wizner" << std::endl;
+	siding->print_siding();
+}
+
 int main()
 {
-    std::cout << "Bocznica kolejowa" << std::endl;
+	Siding* siding = new Siding(5);
 
-    Siding* siding = new Siding(5); 
+	while (true)
+	{
+		draw_screen(siding);
+		char c = tolower(_getch());
 
-    // TODO: Remove this.
-    siding->print_siding();
-    return 0;
+		if (c == 'q')
+			break;
 
-    while (true)
-    {
-        char c;
-        std::cin >> c;
+		bool continue_game = siding->parse_input(c);
+		if (continue_game)
+		{
+			draw_screen(siding);
+			std::cout << "Koniec gry! Wcisnij dowolny przycisk aby rozpoczac nowa rozgrywke.";
+			_getch();
+			delete siding;
+			siding = new Siding(5);
+		}
+	}
 
-    c = tolower(c);
-
-    //TODO: Remove this
-    if (c == 'p')
-        siding->print_siding();
-
-    if (c == 'q')
-        break;
-    }
-
-    delete siding;
+	delete siding;
 }

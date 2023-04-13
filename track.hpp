@@ -4,7 +4,7 @@
 
 class Track
 {
-    public:
-        std::string Current;
-        std::string Target;
+public:
+	std::string Current;
+	std::string Target;
 };

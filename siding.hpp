@@ -5,14 +5,22 @@
 
 class Siding
 {
-    public:
-        Siding(size_t track_count);
-        ~Siding();
+public:
+	Siding(size_t track_count);
+	~Siding();
 
-        std::vector<Track*> Tracks;
-        int Points;
-        std::string Queue;
+	void print_siding();
+	bool should_continue_game();
+	bool parse_input(char input);
 
-        void print_siding();
-        void generate_data();
+private:
+	void generate_track_data();
+	void release_wagon();
+	char rand_letter();
+	void assign_points(unsigned int target_track);
+	int Points;
+	size_t QueueStartLength;
+	std::string Queue;
+	std::vector<Track*> Tracks;
+	std::vector<bool> Crossings;
 };
