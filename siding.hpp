@@ -6,7 +6,10 @@
 class Siding
 {
     public:
+        Siding(size_t track_count);
+        ~Siding();
         std::vector<Track*> Tracks;
         int Points;
         void print_siding();
+        void generate_data();
 };
