@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="bocznica_kolejowa.cpp">
+    <ClCompile Include="siding.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="siding.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

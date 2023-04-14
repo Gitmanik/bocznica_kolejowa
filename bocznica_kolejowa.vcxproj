@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="bocznica_kolejowa.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="siding.cpp" />
   </ItemGroup>
   <ItemGroup>
